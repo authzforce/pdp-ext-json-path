@@ -63,7 +63,7 @@ public abstract class StandardFunctionTest
 	private static final class BagValueExpression<BV extends Bag<?>> extends ConstantExpression<BV>
 	{
 
-		protected BagValueExpression(final Datatype<BV> datatype, final BV v) throws IllegalArgumentException
+		private BagValueExpression(final Datatype<BV> datatype, final BV v) throws IllegalArgumentException
 		{
 			super(datatype, v);
 		}

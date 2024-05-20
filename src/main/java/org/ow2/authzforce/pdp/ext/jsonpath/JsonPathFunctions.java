@@ -157,7 +157,7 @@ public final class JsonPathFunctions
 			{
 
 				@Override
-				protected Bag<RETURN_BAG_ELEMENT_TYPE> evaluate(Deque<AttributeValue> args) throws IndeterminateEvaluationException
+				protected Bag<RETURN_BAG_ELEMENT_TYPE> evaluate(Deque<AttributeValue> args)
 				{
 					// first arg is the JSON object/array
 					final AttributeValue arg0 = args.poll();

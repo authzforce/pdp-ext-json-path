@@ -43,7 +43,7 @@ public class JsonPathFunctionTest extends StandardFunctionTest
 	}
 
 	@Parameters(name = "{index}: {0}")
-	public static Collection<Object[]> params() throws Exception
+	public static Collection<Object[]> params()
 	{
 		return Arrays.asList(
 		        /*
