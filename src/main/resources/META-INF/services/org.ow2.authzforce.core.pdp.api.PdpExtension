@@ -1,4 +1,5 @@
 org.ow2.authzforce.pdp.ext.jsonpath.JsonValue$Factory
+org.ow2.authzforce.pdp.ext.jsonpath.JsonValue$OneAndOnlyFunction
 org.ow2.authzforce.pdp.ext.jsonpath.JsonPathFunctions$StringsFromJsonPathFunction
 org.ow2.authzforce.pdp.ext.jsonpath.JsonPathFunctions$BooleansFromJsonPathFunction
 org.ow2.authzforce.pdp.ext.jsonpath.JsonPathFunctions$DoublesFromJsonPathFunction
