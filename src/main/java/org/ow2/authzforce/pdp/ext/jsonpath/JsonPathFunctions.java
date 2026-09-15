@@ -33,7 +33,6 @@ import org.ow2.authzforce.core.pdp.api.expression.Expression;
 import org.ow2.authzforce.core.pdp.api.expression.Expressions;
 import org.ow2.authzforce.core.pdp.api.func.BaseFirstOrderFunctionCall;
 import org.ow2.authzforce.core.pdp.api.func.FirstOrderFunctionCall;
-import org.ow2.authzforce.core.pdp.api.func.Function;
 import org.ow2.authzforce.core.pdp.api.func.MultiParameterTypedFirstOrderFunction;
 import org.ow2.authzforce.core.pdp.api.value.ArbitrarilyBigInteger;
 import org.ow2.authzforce.core.pdp.api.value.AttributeDatatype;
