@@ -81,7 +81,6 @@ public final class JsonValue extends StringParseableValue<String>
 		Preconditions.checkArgument(jsonProvider.isArray(json) || jsonProvider.isMap(json), "Invalid input for JsonValue datatype: expected: JSON object (Map) or array (List); actual: " + json.getClass());
 	}
 
-	@SuppressFBWarnings(value="EI_EXPOSE_REP", justification="According to Saxon documentation, an XdmValue is immutable.")
 	@Override
 	public XdmItem getXdmItem()
 	{
