@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2024 THALES.
+ * Copyright 2012-2026 THALES.
  *
  * This file is part of AuthzForce CE.
  *
@@ -25,15 +25,12 @@ import com.jayway.jsonpath.InvalidJsonException;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.ReadContext;
 import com.jayway.jsonpath.spi.json.JsonProvider;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import net.sf.saxon.s9api.ItemType;
 import net.sf.saxon.s9api.XdmAtomicValue;
 import net.sf.saxon.s9api.XdmItem;
+import org.ow2.authzforce.core.pdp.api.func.FirstOrderBagFunctions;
 import org.ow2.authzforce.core.pdp.api.func.Function;
-import org.ow2.authzforce.core.pdp.api.value.AttributeDatatype;
-import org.ow2.authzforce.core.pdp.api.value.Datatype;
-import org.ow2.authzforce.core.pdp.api.value.StringContentOnlyValueFactory;
-import org.ow2.authzforce.core.pdp.api.value.StringParseableValue;
+import org.ow2.authzforce.core.pdp.api.value.*;
 
 /**
  * XACML datatype for JSON object/array values (cf. RFC 8259), the Java representation is optimized for JSONPath processing {@link JsonPathFunctions}
@@ -48,7 +45,7 @@ public final class JsonValue extends StringParseableValue<String>
 	 * Create a XACML Datatype for JSON values
 	 */
 	public static final AttributeDatatype<JsonValue> DATATYPE = new AttributeDatatype<>(JsonValue.class, Datatype.AUTHZFORCE_EXTENSION_PREFIX + "json",
-				Function.AUTHZFORCE_EXTENSION_PREFIX + "json-", ItemType.STRING);
+				Function.AUTHZFORCE_EXTENSION_PREFIX + "json", ItemType.STRING);
 
 	/**
 	 * JsonPath processing configuration
@@ -83,7 +80,6 @@ public final class JsonValue extends StringParseableValue<String>
 		Preconditions.checkArgument(jsonProvider.isArray(json) || jsonProvider.isMap(json), "Invalid input for JsonValue datatype: expected: JSON object (Map) or array (List); actual: " + json.getClass());
 	}
 
-	@SuppressFBWarnings(value="EI_EXPOSE_REP", justification="According to Saxon documentation, an XdmValue is immutable.")
 	@Override
 	public XdmItem getXdmItem()
 	{
@@ -171,4 +167,22 @@ public final class JsonValue extends StringParseableValue<String>
 		}
 
 	}
+
+	/**
+	 * Functions
+	 */
+	public static final class OneAndOnlyFunction extends FirstOrderBagFunctions.SingletonBagToPrimitive<JsonValue> {
+
+		/**
+		 * Constructor
+		 */
+		public OneAndOnlyFunction()
+		{
+			super(DATATYPE, DATATYPE.getBagDatatype());
+		}
+	}
+
+	// TODO: other functions
+	// new FirstOrderBagFunctions.BagSize<>(paramBagType), new FirstOrderBagFunctions.BagContains<>(paramType, paramBagType, paramArrayClass),
+	//	new FirstOrderBagFunctions.PrimitiveToBag<>(paramType, paramBagType),
 }

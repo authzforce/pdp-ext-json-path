@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2024 THALES.
+ * Copyright 2012-2026 THALES.
  *
  * This file is part of AuthzForce CE.
  *
@@ -33,7 +33,6 @@ import org.ow2.authzforce.core.pdp.api.expression.Expression;
 import org.ow2.authzforce.core.pdp.api.expression.Expressions;
 import org.ow2.authzforce.core.pdp.api.func.BaseFirstOrderFunctionCall;
 import org.ow2.authzforce.core.pdp.api.func.FirstOrderFunctionCall;
-import org.ow2.authzforce.core.pdp.api.func.Function;
 import org.ow2.authzforce.core.pdp.api.func.MultiParameterTypedFirstOrderFunction;
 import org.ow2.authzforce.core.pdp.api.value.ArbitrarilyBigInteger;
 import org.ow2.authzforce.core.pdp.api.value.AttributeDatatype;
@@ -113,7 +112,7 @@ public final class JsonPathFunctions
 		 */
 		public JsonPathFunction(final String returnBagElementTypeShortName, final BagDatatype<RETURN_BAG_ELEMENT_TYPE> returnType)
 		{
-			super(Function.AUTHZFORCE_EXTENSION_PREFIX + returnBagElementTypeShortName + "-from-json-path", returnType, false, Arrays.asList(JsonValue.DATATYPE, StandardDatatypes.STRING));
+			super(AUTHZFORCE_EXTENSION_PREFIX + returnBagElementTypeShortName + "-from-json-path", returnType, false, Arrays.asList(JsonValue.DATATYPE, StandardDatatypes.STRING));
 			this.returnType = returnType;
 		}
 

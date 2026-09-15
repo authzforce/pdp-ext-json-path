@@ -3,13 +3,13 @@
 	<parent>
 		<groupId>org.ow2.authzforce</groupId>
 		<artifactId>authzforce-ce-parent</artifactId>
-		<version>9.1.0</version>
+		<version>9.3.0</version>
 	</parent>
 	<artifactId>authzforce-pdp-ext-json-path</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>AuthzForce PDP extensions for JSON value processing, in particular JSONPath evaluation; it provides the XACML datatype 'urn:ow2:authzforce:feature:pdp:datatype:json' for JSON object/array values, and XACML functions that evaluate a JSON path (second parameter of standard string datatype) against an input JSON object/array (first parameter of datatype 'urn:ow2:authzforce:feature:pdp:datatype:json') and return the result of this evaluation. The return datatype depends on the actual function used: 'urn:ow2:authzforce:feature:pdp:function:string-from-json-path' returns a bag of strings, 'urn:ow2:authzforce:feature:pdp:function:integer-from-json-path' returns a bag of integers, 'urn:ow2:authzforce:feature:pdp:function:double-from-json-path' returns a bag of doubles, 'urn:ow2:authzforce:feature:pdp:function:boolean-from-json-path' returns a bag of booleans.</description>
-	<url>${project.url}</url>
+	<url>${homepage.url}</url>
 	<developers>
 		<developer>
 			<name>AuthzForce Team</name>
@@ -37,13 +37,13 @@
 			<groupId>org.ow2.authzforce</groupId>
 			<artifactId>authzforce-ce-core-pdp-api</artifactId>
 			<!-- Make sure the version matches the one used by the `authzforce-ce-core-pdp-engine` version you are using. -->
-			<version>22.0.0</version>
+			<version>22.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<!-- Upgrade when https://github.com/json-path/JsonPath/issues/999 is resolved (RFC 9535 on JSONPath supported) -->
-			<version>2.9.0</version>
+			<version>2.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.spotbugs</groupId>
@@ -71,7 +71,7 @@
 				<configuration>
 					<!-- The plugin has numerous issues with version matching, which triggers false positives so we need a "suppresion" file for those. More info: https://github.com/jeremylong/DependencyCheck/issues -->
 					<suppressionFile>owasp-dependency-check-suppression.xml</suppressionFile>
-					<failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
+					<failBuildOnCVSS>0</failBuildOnCVSS>
 				</configuration>
 				<executions>
 					<execution>
