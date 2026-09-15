@@ -113,7 +113,7 @@ public final class JsonPathFunctions
 		 */
 		public JsonPathFunction(final String returnBagElementTypeShortName, final BagDatatype<RETURN_BAG_ELEMENT_TYPE> returnType)
 		{
-			super(Function.AUTHZFORCE_EXTENSION_PREFIX + returnBagElementTypeShortName + "-from-json-path", returnType, false, Arrays.asList(JsonValue.DATATYPE, StandardDatatypes.STRING));
+			super(AUTHZFORCE_EXTENSION_PREFIX + returnBagElementTypeShortName + "-from-json-path", returnType, false, Arrays.asList(JsonValue.DATATYPE, StandardDatatypes.STRING));
 			this.returnType = returnType;
 		}
 
