@@ -25,7 +25,6 @@ import com.jayway.jsonpath.InvalidJsonException;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.ReadContext;
 import com.jayway.jsonpath.spi.json.JsonProvider;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import net.sf.saxon.s9api.ItemType;
 import net.sf.saxon.s9api.XdmAtomicValue;
 import net.sf.saxon.s9api.XdmItem;
