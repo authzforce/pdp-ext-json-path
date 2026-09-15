@@ -25,7 +25,6 @@ import com.jayway.jsonpath.InvalidJsonException;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.ReadContext;
 import com.jayway.jsonpath.spi.json.JsonProvider;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import net.sf.saxon.s9api.ItemType;
 import net.sf.saxon.s9api.XdmAtomicValue;
 import net.sf.saxon.s9api.XdmItem;
@@ -81,7 +80,6 @@ public final class JsonValue extends StringParseableValue<String>
 		Preconditions.checkArgument(jsonProvider.isArray(json) || jsonProvider.isMap(json), "Invalid input for JsonValue datatype: expected: JSON object (Map) or array (List); actual: " + json.getClass());
 	}
 
-	@SuppressFBWarnings(value="EI_EXPOSE_REP", justification="According to Saxon documentation, an XdmValue is immutable.")
 	@Override
 	public XdmItem getXdmItem()
 	{
